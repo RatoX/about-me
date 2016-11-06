@@ -1,4 +1,4 @@
-$base-color: #1F1F1F;
+$base-color: #5C5C5C;
 $secondary-color: #7E8F7C;
 $constrast-color: #FDF3E7;
 $font-color: #EDEDED;
@@ -16,6 +16,7 @@ $font-color: #EDEDED;
 
 .myself a {
   color: $constrast-color;
+  text-transform: uppercase;
 }
 
 .myself > .languages {
