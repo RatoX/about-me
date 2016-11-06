@@ -4,7 +4,6 @@ $font-color: #3D3D3D;
 
 .myself {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: $base-color;
@@ -24,7 +23,7 @@ $font-color: #3D3D3D;
   flex-direction: row;
   justify-content: space-around;
   background-color: $dark-color;
-  height: 40px;
+  min-height: 40px;
 }
 
 .myself > .profile {
