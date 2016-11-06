@@ -1,6 +1,7 @@
 var path              = require('path');
     webpack           = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
@@ -8,7 +9,7 @@ var config = {
   entry: {
     script: './scripts/index.js',
     style: './styles/index.scss',
-    vendor: ['mithril']
+    vendor: []
   },
 
   module: {
@@ -23,13 +24,16 @@ var config = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader'),
       },
       {
-        test: /\.(jpg)$/,
+        test: /\.(jpg|ico)$/,
         loader: 'file?name=images/[name].[ext]'
       },
     ],
   },
 
   plugins: [
+    new FaviconsWebpackPlugin({
+      logo: path.join(__dirname, 'assets/img/perfil.jpeg'),
+    }),
     new webpack.ProvidePlugin({
       I18n: 'i18n-js'
     }),
