@@ -30,7 +30,9 @@ var config = {
   },
 
   plugins: [
-    new webpack.ProvidePlugin({ m: 'mithril' }),
+    new webpack.ProvidePlugin({
+      I18n: 'i18n-js'
+    }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({
