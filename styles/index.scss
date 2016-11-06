@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import 'myself';
 
 * {
   box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility !important;
+  letter-spacing: .03em;
 }
 
 html, body {

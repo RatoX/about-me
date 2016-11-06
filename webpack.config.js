@@ -2,6 +2,7 @@ var path              = require('path');
     webpack           = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
+    CopyWebpackPlugin = require('copy-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
@@ -31,6 +32,12 @@ var config = {
   },
 
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: path.join(__dirname, 'assets/img/logos/'),
+        to: path.join(__dirname, 'dist/logos/'),
+      }
+    ]),
     new FaviconsWebpackPlugin({
       logo: path.join(__dirname, 'assets/img/perfil.jpeg'),
     }),

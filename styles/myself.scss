@@ -1,7 +1,6 @@
-$base-color: #5C5C5C;
-$secondary-color: #7E8F7C;
-$constrast-color: #FDF3E7;
-$font-color: #EDEDED;
+$base-color: #ffeb3b;
+$dark-color: #222;
+$font-color: #3D3D3D;
 
 .myself {
   width: 100%;
@@ -10,22 +9,29 @@ $font-color: #EDEDED;
   flex-direction: column;
   background-color: $base-color;
   justify-content: space-between;
-  padding: 30px;
   color: $font-color;
 }
 
 .myself a {
-  color: $constrast-color;
+  color: #fff;
   text-transform: uppercase;
+  text-decoration: none;
+  align-self: center;
 }
 
 .myself > .languages {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: $dark-color;
+  height: 40px;
 }
 
-.myself > figure > img {
+.myself > .profile {
+  flex-grow: 1;
+}
+
+.myself > .profile > img {
   width: 200px;
   height: 200px;
   margin: 1em auto;
@@ -36,16 +42,61 @@ $font-color: #EDEDED;
   -webkit-border-radius: 99em;
   -moz-border-radius: 99em;
   border-radius: 99em;
-  border: 5px solid $constrast-color;
+  border: 5px solid $font-color;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 }
 
-.myself > figure > figcaption {
+.myself > .profile > figcaption {
   text-align: center;
   font-size: 2em;
   text-shadow: 0 1px 0 rgba($font-color, 0.4);
 }
 
+.myself > .profile > .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+
+  .email {
+    font-weight: bold;
+    font-size: 1.4em;
+  }
+
+  .fingerprint {
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 1em;
+
+    a {
+      color: #3D3D3D;
+    }
+
+    label {
+      font-size: 0.8em;
+      display: block;
+    }
+  }
+}
+
+.myself > .social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.myself > .social a + a {
+  margin-left: 20px;
+}
+
+.myself > .social img {
+  width: 60px;
+  box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.75);
+  border-radius: 50%;
+  align-self: center;
+}
+
 .myself > footer {
-	font-size: 0.9em;
+  font-size: 0.9em;
 }
