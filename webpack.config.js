@@ -36,6 +36,10 @@ var config = {
       {
         from: path.join(__dirname, 'assets/img/logos/'),
         to: path.join(__dirname, 'dist/logos/'),
+      },
+      {
+        from: path.join(__dirname, 'assets/img/perfil.jpeg'),
+        to: path.join(__dirname, 'dist/'),
       }
     ]),
     new FaviconsWebpackPlugin({
