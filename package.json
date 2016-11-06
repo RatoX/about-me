@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "deploy": "gh-pages -d dist",
     "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive ./tests"
   },
   "author": "RatoX",
@@ -26,6 +27,7 @@
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.22.0",
     "jsdom": "^9.8.3",
     "mithril-query": "^1.0.0",
