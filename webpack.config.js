@@ -10,7 +10,6 @@ var config = {
   entry: {
     script: './scripts/index.js',
     style: './styles/index.scss',
-    vendor: []
   },
 
   module: {
@@ -48,7 +47,6 @@ var config = {
     new webpack.ProvidePlugin({
       I18n: 'i18n-js'
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({
       template: 'templates/index.html.ejs'
