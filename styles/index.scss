@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import 'myself';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+html, body {
+  margin: 0;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
