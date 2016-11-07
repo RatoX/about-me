@@ -31,8 +31,9 @@ $font-color: #3D3D3D;
 }
 
 .myself > .profile > img {
-  width: 200px;
-  height: 200px;
+  max-width: 200px;
+  width: 60%;
+  max-height: 200px;
   margin: 1em auto;
   display: block;
   background-size: cover;
@@ -47,7 +48,7 @@ $font-color: #3D3D3D;
 
 .myself > .profile > figcaption {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.3em;
   text-shadow: 0 1px 0 rgba($font-color, 0.4);
 }
 
@@ -56,17 +57,17 @@ $font-color: #3D3D3D;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 1em;
 
   .email {
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.1em;
   }
 
   .fingerprint {
     margin-top: 10px;
     font-weight: normal;
-    font-size: 1em;
+    font-size: 0.9em;
 
     a {
       color: #3D3D3D;
