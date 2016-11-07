@@ -24,6 +24,10 @@ $font-color: #3D3D3D;
   justify-content: space-around;
   background-color: $dark-color;
   min-height: 40px;
+
+  & .active {
+    text-decoration: underline;
+  }
 }
 
 .myself > .profile {
@@ -46,10 +50,14 @@ $font-color: #3D3D3D;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 }
 
-.myself > .profile > figcaption {
+.myself > .profile > .name {
   text-align: center;
   font-size: 1.3em;
-  text-shadow: 0 1px 0 rgba($font-color, 0.4);
+}
+
+.myself > .profile > .about {
+  text-align: center;
+  font-size: 1.1em;
 }
 
 .myself > .profile > .contact {

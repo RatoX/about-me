@@ -2,6 +2,7 @@ import { $, $$, toKey, getLanguageFromHash } from "~/utils/util"
 
 const stringsToTranslate = [
   '.myself .about',
+  '.myself .contact .fingerprint .pgp',
 ]
 
 let translate = function(language=getLanguageFromHash()){
@@ -15,11 +16,23 @@ let translate = function(language=getLanguageFromHash()){
   })
 }
 
+let removeClass = function(query, cssClass){
+  let elements = $$(query)
+  Array.prototype.forEach.call(elements, (element)=>{
+    element.classList.remove(cssClass)
+  })
+}
+
 let linksToTranslate = $$(".myself a.language")
 
 Array.prototype.forEach.call(linksToTranslate, (element)=>{
   element.onclick = function(event){
-    let language = event.target.hash.substring(1)
+    event.preventDefault()
+    removeClass(".myself a.language", "active")
+
+    let element  = event.target
+    let language = element.hash.substring(1)
+    element.classList.toggle("active");
     translate(language)
   }
 })
