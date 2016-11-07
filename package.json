@@ -11,8 +11,6 @@
   "author": "RatoX",
   "license": "GPL-3.0",
   "dependencies": {
-    "i18n-js": "^1.0.0",
-    "mithril": "^0.2.5"
   },
   "devDependencies": {
     "babel": "^6.5.2",

@@ -1,3 +1,4 @@
+import I18n from "~/utils/translations"
 import { $, $$, toKey, getLanguageFromHash } from "~/utils/util"
 
 const stringsToTranslate = [

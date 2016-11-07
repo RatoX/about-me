@@ -1,6 +1,6 @@
 import jsdom from 'mocha-jsdom'
 import { expect } from 'chai'
-import { toKey, getLanguageFromHash } from '../scripts/utils/util'
+import { toKey, getLanguageFromHash, resolveObjectByPath } from '../scripts/utils/util'
 
 describe('Utils function', ()=>{
   context("toKey", ()=>{
@@ -42,6 +42,22 @@ describe('Utils function', ()=>{
     it("should be always return pt for invalid languages", ()=>{
       window.location.hash = "#not"
       expect(getLanguageFromHash()).to.equal("pt-BR")
+    })
+
+  })
+
+  context("resolveObjectByPath", ()=>{
+
+    it("should return a value from nested objects using a path", ()=>{
+      let obj = {
+        a: {
+          b: {
+            c:12
+          }
+        }
+      }
+
+      expect(resolveObjectByPath(obj, "a.b.c")).to.equal(12)
     })
 
   })

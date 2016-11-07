@@ -44,9 +44,6 @@ var config = {
     new FaviconsWebpackPlugin({
       logo: path.join(__dirname, 'assets/img/perfil.jpeg'),
     }),
-    new webpack.ProvidePlugin({
-      I18n: 'i18n-js'
-    }),
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({
       template: 'templates/index.html.ejs'

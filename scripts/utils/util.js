@@ -21,3 +21,10 @@ export function $(el){
 export function $$(el){
   return document.querySelectorAll(el);
 }
+
+export function resolveObjectByPath(obj, path) {
+    return path.split('.').reduce(function(prev, curr) {
+        return prev ? prev[curr] : undefined
+    }, obj || self)
+}
+
