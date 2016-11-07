@@ -15,7 +15,7 @@ let translate = function(language=getLanguageFromHash()){
   })
 }
 
-let linksToTranslate = $$(".myself a")
+let linksToTranslate = $$(".myself a.language")
 
 Array.prototype.forEach.call(linksToTranslate, (element)=>{
   element.onclick = function(event){
