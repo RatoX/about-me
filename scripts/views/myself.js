@@ -1,5 +1,5 @@
 import I18n from "~/utils/translations"
-import { $, $$, toKey, getLanguageFromHash } from "~/utils/util"
+import { $, $$, toKey, getLanguageFromHash, removeClass } from "~/utils/util"
 
 const stringsToTranslate = [
   '.myself .about',
@@ -14,13 +14,6 @@ let translate = function(language=getLanguageFromHash()){
     let keyTranslation = toKey(queryElement)
 
     element.innerHTML = I18n.t(keyTranslation)
-  })
-}
-
-let removeClass = function(query, cssClass){
-  let elements = $$(query)
-  Array.prototype.forEach.call(elements, (element)=>{
-    element.classList.remove(cssClass)
   })
 }
 

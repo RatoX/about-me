@@ -1,6 +1,6 @@
 import jsdom from 'mocha-jsdom'
 import { expect } from 'chai'
-import { toKey, getLanguageFromHash, resolveObjectByPath } from '../scripts/utils/util'
+import { toKey, getLanguageFromHash, resolveObjectByPath, removeClass } from '../scripts/utils/util'
 
 describe('Utils function', ()=>{
   context("toKey", ()=>{
@@ -42,6 +42,22 @@ describe('Utils function', ()=>{
     it("should be always return pt for invalid languages", ()=>{
       window.location.hash = "#not"
       expect(getLanguageFromHash()).to.equal("pt-BR")
+    })
+
+  })
+
+  context("removeClass", ()=>{
+
+    jsdom()
+
+    it("should remove some class from a query selector", ()=>{
+      document.body.innerHTML = "<h1 class='opa'>1</h1><h2 class='opa'>2</h2>"
+      removeClass('h1','opa')
+      let h1 = document.querySelector('h1')
+      let h2 = document.querySelector('h2')
+
+      expect(h1.classList.contains('opa')).to.be.false
+      expect(h2.classList.contains('opa')).to.be.true
     })
 
   })

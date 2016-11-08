@@ -28,3 +28,9 @@ export function resolveObjectByPath(obj, path) {
     }, obj || self)
 }
 
+export function removeClass(query, cssClass){
+  let elements = $$(query)
+  Array.prototype.forEach.call(elements, (element)=>{
+    element.classList.remove(cssClass)
+  })
+}
