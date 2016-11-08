@@ -37,16 +37,18 @@ var config = {
         to: path.join(__dirname, 'dist/logos/'),
       },
       {
-        from: path.join(__dirname, 'assets/img/perfil.jpeg'),
+        from: path.join(__dirname, 'assets/img/perfil.jpg'),
         to: path.join(__dirname, 'dist/'),
       }
     ]),
     new FaviconsWebpackPlugin({
-      logo: path.join(__dirname, 'assets/img/perfil.jpeg'),
+      logo: path.join(__dirname, 'assets/img/perfil.jpg'),
     }),
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({
-      template: 'templates/index.html.ejs'
+      inject: false,
+      cache: false,
+      template: 'pug-loader!./templates/index.pug',
     })
   ],
 
