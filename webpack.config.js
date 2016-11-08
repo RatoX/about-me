@@ -17,7 +17,11 @@ var config = {
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)\//,
-          loader: 'babel-loader'
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.pug/,
+        loader: 'pug'
       },
       {
         test: /\.scss/,
@@ -48,7 +52,7 @@ var config = {
     new HtmlWebpackPlugin({
       inject: false,
       cache: false,
-      template: 'pug-loader!./templates/index.pug',
+      template: './templates/index.pug',
     })
   ],
 
