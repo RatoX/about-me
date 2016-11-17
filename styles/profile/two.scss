@@ -1,0 +1,16 @@
+$base-color: #f1c40f;
+
+.profile section.two {
+  height: 100%;
+  background-color: $base-color;
+	box-shadow: -5px 0px 15px 0px rgba(0,0,0,0.75);
+  position: absolute;
+  transform: translateX(103%);
+  will-change: transform;
+  z-index: 160;
+}
+
+.profile section.opa {
+  transform: translateX(0%);
+  transition: transform 300ms linear;
+}

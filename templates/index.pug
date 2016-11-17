@@ -21,4 +21,5 @@ html
         style !{compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}
       include ./myself.pug
       each jsFile in htmlWebpackPlugin.files.js
-        script(type="text/javascript") !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}
+        - var publicPath = htmlWebpackPlugin.files.publicPath.length
+        script(type="text/javascript") !{compilation.assets[jsFile.substr(publicPath)].source()}

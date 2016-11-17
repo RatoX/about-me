@@ -23,6 +23,9 @@ const en = {
         pgp: "Do you want to talk to me using cryptography?",
       }
     },
+		'know-more': {
+      action: "See my skills",
+		},
   }
 }
 
@@ -34,6 +37,9 @@ const ptBR = {
         pgp: "Quer me entrar em contato comigo de forma segura?",
       }
     },
+		'know-more': {
+      action: "Minhas habilidades",
+		},
   }
 }
 
