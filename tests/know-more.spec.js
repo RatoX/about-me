@@ -12,21 +12,30 @@ describe('Know More view', ()=>{
 
     jsdom()
 
+    beforeEach(()=>{
+       document.body.innerHTML = `
+         <main class="main profile">
+           <div class="two hidden">
+             <span class="action back">
+             </span>
+           </div>
+         </main>
+       `
+       KnowMore.init('.main')
+    })
+
     it('should add a action on init', ()=>{
-       document.body.innerHTML = '<main class="opa"></main>'
-       KnowMore.init('.opa')
-       expect(document.querySelector('.opa > span.action')).to.exist
+       expect(document.querySelector('.main > span.action')).to.exist
     })
 
     it('should display knowledge', ()=>{
-       document.body.innerHTML = '<main class="opa"></main>'
-       KnowMore.init('.opa')
-
-       let button = document.body.querySelector('.opa > span.action')
-
+       let button = document.body.querySelector('.main > .action')
        button.click()
 
-       expect(document.querySelector('.opa > section.knowledge')).to.exist
+       let twoSection = document.querySelector('.main.profile > .two')
+
+       expect(twoSection.classList.contains('fade-in')).to.true
+       expect(twoSection.classList.contains('hidden')).to.false
     })
 
   })

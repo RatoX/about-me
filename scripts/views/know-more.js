@@ -15,9 +15,18 @@ KnowMore.prototype.createAction = function(){
 KnowMore.prototype.init = function(mainClass = ''){
   let knowMoreSection = $(`${mainClass}`)
   let button = this.createAction()
+  let sectionTwo = $('.profile .two')
 
   button.addEventListener('click', ()=>{
-    $('.profile section.two').classList.add('opa')
+    sectionTwo.classList.remove('hidden')
+    sectionTwo.classList.add('fade-in')
+  })
+
+  sectionTwo
+  .querySelector('.action.back')
+  .addEventListener('click', ()=>{
+    sectionTwo.classList.remove('fade-in')
+    sectionTwo.classList.add('hidden')
   })
 
   knowMoreSection.appendChild(button)
