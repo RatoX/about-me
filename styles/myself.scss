@@ -35,3 +35,18 @@ $font-color: #222;
     text-decoration: underline;
   }
 }
+
+.action {
+  box-shadow: 2px 3px 3px 0px rgba(0,0,0,0.75);
+  max-width: 200px;
+  max-height: 50px;
+  background-color: $dark-color;
+  padding: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($dark-color, 10%)
+  }
+}

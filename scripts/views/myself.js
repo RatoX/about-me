@@ -6,6 +6,8 @@ const stringsToTranslate = [
   '.myself .about',
   '.myself .contact .fingerprint .pgp',
   '.myself .know-more .action',
+  '.myself .profile .skills',
+  '.myself .profile .back',
 ]
 
 let translate = function(language=getLanguageFromHash()){

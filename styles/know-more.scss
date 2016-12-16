@@ -6,19 +6,6 @@ $font-color: #222;
   text-align: center;
   margin: 3em 0 0 0;
   flex-grow: 1;
-
-  .action {
-    box-shadow: 2px 3px 3px 0px rgba(0,0,0,0.75);
-    background-color: $dark-color;
-    padding: 15px;
-    color: #fff;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    &:hover {
-      background-color: lighten($dark-color, 10%)
-    }
-  }
 }
 
 .myself .know-more .knowledge {
