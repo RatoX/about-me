@@ -17,6 +17,22 @@ $base-color: #f1c40f;
   align-items: center;
 }
 
+.profile section.two.content .skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .skill {
+    h1 {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(34,34,34,0.16);
+    }
+  }
+}
+
 .profile .hidden {
   -webkit-transform: translateX(103%);
   transform: translateX(103%);
