@@ -24,7 +24,6 @@ const en = {
       }
     },
     profile: {
-      skills: "Skills",
       back: "< Back",
     },
     'know-more': {
@@ -42,7 +41,6 @@ const ptBR = {
       }
     },
     profile: {
-      skills: "Habilidades",
       back: "<< Voltar",
     },
     'know-more': {
