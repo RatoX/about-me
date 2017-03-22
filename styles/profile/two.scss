@@ -1,9 +1,9 @@
 $base-color: #f1c40f;
 
 .profile section.two {
-  height: 80%;
+  height: 100vh;
   background-color: $base-color;
-	box-shadow: -5px 0px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: -5px 0px 15px 0px rgba(0,0,0,0.75);
   position: absolute;
   will-change: transform;
   transition: transform 300ms linear;
