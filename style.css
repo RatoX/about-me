@@ -67,6 +67,7 @@ body {
   box-shadow: -5px 0px 15px 0px rgba(0, 0, 0, 0.75);
   position: absolute;
   will-change: transform;
+  -webkit-transition: -webkit-transform 300ms linear;
   transition: transform 300ms linear;
   z-index: 160; }
 
@@ -99,7 +100,7 @@ body {
   transform: translateX(103%); }
 
 .profile .fade-in {
-  -webkit-transform: translateX(103%);
+  -webkit-transform: translateX(0%);
   transform: translateX(0%); }
 
 .myself > .social {
