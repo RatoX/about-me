@@ -17,7 +17,7 @@ var I18n = {
 
 const en = {
   myself: {
-    about: "I am a FullStack developer with focus on FrontEnd.",
+    about: "I am a FullStack developer.",
     contact: {
       fingerprint: {
         pgp: "Do you want to talk to me using cryptography?",
@@ -34,7 +34,7 @@ const en = {
 
 const ptBR = {
   myself: {
-    about: "Desenvolvedor FullStack com foco em FrontEnd.",
+    about: "Desenvolvedor FullStack.",
     contact: {
       fingerprint: {
         pgp: "Quer me entrar em contato comigo de forma segura?",
