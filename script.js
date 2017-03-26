@@ -89,12 +89,6 @@
 	      fingerprint: {
 	        pgp: "Do you want to talk to me using cryptography?"
 	      }
-	    },
-	    profile: {
-	      back: "< Back"
-	    },
-	    'know-more': {
-	      action: "See my skills >>"
 	    }
 	  }
 	};
@@ -106,12 +100,6 @@
 	      fingerprint: {
 	        pgp: "Quer entrar em contato comigo de forma segura?"
 	      }
-	    },
-	    profile: {
-	      back: "<< Voltar"
-	    },
-	    'know-more': {
-	      action: "Minhas habilidades >>"
 	    }
 	  }
 	};
@@ -135,7 +123,6 @@
 	exports.$ = $;
 	exports.$$ = $$;
 	exports.resolveObjectByPath = resolveObjectByPath;
-	exports.removeClass = removeClass;
 	function getLanguageFromHash() {
 	  var language = "pt-BR";
 	  if (window.location.hash) {
@@ -168,13 +155,6 @@
 	  }, obj || self);
 	}
 
-	function removeClass(query, cssClass) {
-	  var elements = $$(query);
-	  Array.prototype.forEach.call(elements, function (element) {
-	    element.classList.remove(cssClass);
-	  });
-	}
-
 /***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
@@ -185,15 +165,11 @@
 
 	var _translations2 = _interopRequireDefault(_translations);
 
-	var _knowMore = __webpack_require__(4);
-
-	var _knowMore2 = _interopRequireDefault(_knowMore);
-
 	var _util = __webpack_require__(2);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var stringsToTranslate = ['.myself .about', '.myself .contact .fingerprint .pgp', '.myself .know-more .action', '.myself .profile .back'];
+	var stringsToTranslate = ['.myself .about', '.myself .contact .fingerprint .pgp'];
 
 	var translate = function translate() {
 	  var language = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : (0, _util.getLanguageFromHash)();
@@ -202,85 +178,34 @@
 
 	  stringsToTranslate.forEach(function (queryElement) {
 	    var element = (0, _util.$)(queryElement);
+	    var keyTranslation = (0, _util.toKey)(queryElement);
 
-	    if (element) {
-	      var keyTranslation = (0, _util.toKey)(queryElement);
-	      element.innerHTML = _translations2.default.t(keyTranslation);
-	    }
+	    element.innerHTML = _translations2.default.t(keyTranslation);
 	  });
 	};
 
-	var initTranslate = function initTranslate() {
-	  Array.prototype.forEach.call((0, _util.$$)(".myself a.language"), function (element) {
-	    element.addEventListener('click', function (event) {
-	      event.preventDefault();
-	      (0, _util.removeClass)(".myself a.language", "active");
-
-	      var element = event.target;
-	      var language = element.hash.substring(1);
-	      element.classList.toggle("active");
-	      translate(language);
-	    });
+	var removeClass = function removeClass(query, cssClass) {
+	  var elements = (0, _util.$$)(query);
+	  Array.prototype.forEach.call(elements, function (element) {
+	    element.classList.remove(cssClass);
 	  });
-
-	  translate();
 	};
 
-	document.addEventListener('DOMContentLoaded', function () {
-	  initTranslate();
-	  _knowMore2.default.init('.know-more');
+	var linksToTranslate = (0, _util.$$)(".myself a.language");
+
+	Array.prototype.forEach.call(linksToTranslate, function (element) {
+	  element.onclick = function (event) {
+	    event.preventDefault();
+	    removeClass(".myself a.language", "active");
+
+	    var element = event.target;
+	    var language = element.hash.substring(1);
+	    element.classList.toggle("active");
+	    translate(language);
+	  };
 	});
 
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _translations = __webpack_require__(1);
-
-	var _translations2 = _interopRequireDefault(_translations);
-
-	var _util = __webpack_require__(2);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function KnowMore() {}
-
-	KnowMore.prototype.createAction = function () {
-	  var button = document.createElement('span');
-	  var buttonText = document.createTextNode(_translations2.default.t('myself.know-more.action'));
-
-	  button.classList.add('action');
-	  button.appendChild(buttonText);
-	  return button;
-	};
-
-	KnowMore.prototype.init = function () {
-	  var mainClass = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
-	  var knowMoreSection = (0, _util.$)("" + mainClass);
-	  var button = this.createAction();
-	  var sectionTwo = (0, _util.$)('.profile .two');
-
-	  button.addEventListener('click', function () {
-	    sectionTwo.classList.remove('hidden');
-	    sectionTwo.classList.add('fade-in');
-	  });
-
-	  sectionTwo.querySelector('.action.back').addEventListener('click', function () {
-	    sectionTwo.classList.remove('fade-in');
-	    sectionTwo.classList.add('hidden');
-	  });
-
-	  knowMoreSection.appendChild(button);
-	};
-
-	exports.default = Object.create(KnowMore.prototype);
+	translate();
 
 /***/ }
 /******/ ]);
