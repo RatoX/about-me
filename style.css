@@ -3,6 +3,9 @@
   margin: 3em 0 0 0;
   flex-grow: 1; }
 
+body {
+  overflow: hidden; }
+
 .profile {
   display: flex; }
 
