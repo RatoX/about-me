@@ -13,7 +13,9 @@ let translate = function(language=getLanguageFromHash()){
     let element        = $(queryElement)
     let keyTranslation = toKey(queryElement)
 
-    element.innerHTML = I18n.t(keyTranslation)
+    if (element) {
+      element.innerHTML = I18n.t(keyTranslation)
+    }
   })
 }
 

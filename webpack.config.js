@@ -13,23 +13,31 @@ var config = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)\//,
-        loader: 'babel-loader'
+        use: [
+          'babel-loader',
+        ],
       },
       {
         test: /\.pug/,
-        loader: 'pug'
+        use: [
+          'pug-loader',
+        ],
       },
       {
         test: /\.scss/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader'),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader!sass-loader',
+        }),
       },
       {
         test: /\.(jpg|ico)$/,
-        loader: 'file?name=images/[name].[ext]'
+        loader: 'file-loader',
+        options: { name: 'images/[name].[ext]' },
       },
     ],
   },
@@ -48,7 +56,9 @@ var config = {
     new FaviconsWebpackPlugin({
       logo: path.join(__dirname, 'assets/img/perfil.jpg'),
     }),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin({
+      filename: '[name].css',
+    }),
     new HtmlWebpackPlugin({
       inject: false,
       cache: false,
@@ -57,8 +67,10 @@ var config = {
   ],
 
   resolve: {
-    root: path.join(__dirname, 'scripts'),
-    extensions: ['', '.js'],
+    modules: [
+      path.join(__dirname, 'scripts'),
+      'node_modules'
+    ],
   },
 
   output: {
