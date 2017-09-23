@@ -3,6 +3,7 @@ var path              = require('path');
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
     CopyWebpackPlugin = require('copy-webpack-plugin'),
+    UglifyJS          = require('uglifyjs-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
@@ -63,7 +64,10 @@ var config = {
       inject: false,
       cache: false,
       template: './templates/index.pug',
-    })
+    }),
+    new UglifyJS({
+      parallel: true,
+    }),
   ],
 
   resolve: {
